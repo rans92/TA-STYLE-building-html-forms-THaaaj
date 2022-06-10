@@ -1,0 +1,632 @@
+/***
+    The new CSS reset - version 1.6.0 (last updated 29.4.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+ *:where(:not(html, iframe, canvas, img, svg, video, button):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+
+/* custom styles */
+
+body{
+    max-width: 1920px;
+    background-color: #E6E6E6;
+}
+
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+.column{
+    flex-direction: column;
+}
+.middle{
+    align-items: center;
+}
+.center-o{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+.container-h{
+    width: 65%;
+    margin: 0 auto;
+}
+/*
+font-family: 'Open Sans', sans-serif;
+*/
+
+
+/* header styles */
+
+.header{
+    width: 100%;
+    padding: 32px 0;
+    background-color: #ffffff;
+}
+.head-logo img{
+    width: 56px;
+    height: 56px;
+}
+.page-nav-box{
+    width: 55%;
+}
+
+.logo-link-name{
+    text-decoration: none;
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    color: #000000;
+    margin-left: 12px;
+}
+.page-nav-link{
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: 800;
+    font-family: 'Open Sans', sans-serif;
+    color: #000000;
+    margin-right: -32px;
+}
+
+
+
+/* head-part section /hero section styles */
+
+.head-part{
+    height: 720px;
+}
+.hero{
+    background: url(../media/banner.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    height: 100%;
+    text-align: center;
+    color: #ffffff;
+}
+.bg-hero{
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.hero-header h1{
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 48px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 80px 0 22px 0;
+}
+.hero-header p{
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    margin-top: 12px;
+}
+.angle-down-icon{
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: #69C6BA;
+    margin-top: 16px;
+    margin-bottom: 80px;
+}
+.angle-down-icon i{
+    color: #FFFFFF;
+    font-size: 22px;
+}
+.req-details-box{
+    height: 250px;
+    width: 60%;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    padding: 16px;
+}
+.req-det-box{
+    width: 50%;
+    height: 100%;
+}
+fieldset{
+    border: 0;
+}
+input{
+    border: 0;
+}
+label{
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: 800;
+    font-family: 'Open Sans', sans-serif;
+    color: #000000;
+}
+.req-form{
+    height: 100%;
+}
+.destination-name{
+    width: 100%;
+    height: 50%;
+    text-align: left;
+}
+.destination-name label{
+    display: block;
+    font-size: 14px;
+}
+.destination-name label input{
+    display: block;
+    padding: 8px;
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: 14px;
+}
+.jour-date{
+    width: 100%;
+    height: 50%;
+    text-align: left;
+}
+.jour-date label{
+    width: 48%;
+    font-size: 14px;
+}
+.jour-date input{
+    display: block;
+    padding: 8px;
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: 14px;
+}
+.person-box{
+    height: 50%;
+    width: 100%;
+    text-align: left;
+}
+.rooms{
+    width: 44%;
+    height: 100%;
+}
+.adults{
+    width: 28%;
+    height: 100%;
+}
+.children{
+    width: 28%;
+    height: 100%;
+}
+.input-r{
+    width: 70%;
+    padding: 8px;
+    display: block;
+    margin-top: 8px;
+}
+.input-a, .input-c{
+    width: 80%;
+    padding: 8px;
+    display: block;
+    margin-top: 8px;
+}
+.btn-check{
+    width: 100%;
+    padding: 16px 0;
+    background-color: #69C6BA;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    border: 0;
+    margin-top: 60px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* short section styles */
+
+.short-sec{
+    height: 320px;
+    width: 100%;
+}
+.short-description{
+    height: 100%;
+    background-color: #EFEFEF;
+    text-align: center;
+}
+.desc-box{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 60px;
+}
+.short-desc-heading{
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    color: #000000;
+}
+.short-des-logo{
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    color: #000000;
+}
+.short-para{
+    margin-top: 24px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    color: #817f7f;
+}
+.short-desc-btn{
+    width: 20%;
+    padding: 16px 0;
+    background-color: #69C6BA;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    border: 0;
+    margin-top: 24px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* places section styles */
+
+.box001-01, .box001-02, .box001-03{
+    position: relative;
+}
+
+.box00{
+    height: 500px;
+    width: 50%;
+    background-color: #FFFFFF;
+}
+.box-img{
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+}
+
+.float-box00{
+    width: 60%;
+    height: 280px;
+    position: absolute;
+    top: 110px;
+    right: 80px;
+}
+.float-box00-01{
+    width: 60%;
+    height: 280px;
+    position: absolute;
+    top: 110px;
+    left: 80px;
+}
+.float-box002{
+    width: 86%;
+    height: 280px;
+    padding: 48px;
+    background-color: #69C6BA;
+}
+.float-box002-01{
+    width: 86%;
+    height: 280px;
+    padding: 48px;
+    background-color: #C66996;
+}
+.float-box001{
+    width: 122px;
+    height: 60px;
+}
+.float-box001-0{
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0,0,0,0.6);
+}
+.angle-icon{
+    width: 18px;
+    height: 18px;
+}
+.float-box-heading{
+    font-size: 32px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    color: #FFFFFF;
+}
+.float-box-para{
+    font-size: 14px;
+    list-style: 1.7;
+    font-weight: 400;
+    margin-top: 8px;
+    font-family: 'Open Sans', sans-serif;
+    color: #FFFFFF;
+}
+.float-box-btn{
+    width: 30%;
+    padding: 16px 0;
+    color: #69C6BA;
+    background-color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    border: 0;
+    margin-top: 24px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.con-map-img-box{
+    height: 200px;
+    width: 100%;
+    background-color: #69C6BA;
+}
+.small-img-box{
+    width: 14.2%;
+    height: 100%;
+    text-align: center;
+    padding-top: 36px;
+}
+.con-img{
+    display: block;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+}
+.con-name{
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin-top: 12px;
+}
+.asia-con{
+    background-color: #C66996;
+}
+
+/* tourist place styles */
+
+.tour-list{
+    background-color: #FFFFFF;
+    padding: 48px 0;
+}
+
+
+.tourist-place{
+    height: 180px;
+    width: 70%;
+    margin: 18px auto 32px auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.tourist-place-img{
+    width: 270px;
+    height: 100%;
+}
+.tourist-place-det{
+    width: calc(100% - 480px);
+    height: 100%;
+    padding: 32px 22px;
+}
+.tourist-place-price{
+    background-color: #69C6BA;
+    width: 200px;
+    height: 100%;
+}
+.price-det{
+    text-align: center;
+    margin: 0 auto;
+}
+.price-det-p{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #ffffff;
+}
+.price-det-p0{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 22px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+.tourist-place-det h2{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: #000000;
+    text-transform: uppercase;
+}
+.city-place{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #C66996;
+    margin-top: 10px;
+}
+.city-det{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #817f7f;
+    margin-top: 14px;
+    line-height: 1.6;
+}
+.show-more-place{
+    width: 14%;
+    padding: 16px 0;
+    background-color: #69C6BA;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    border: 0;
+    margin: 32px auto;
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+}
+.map-n-form{
+    position: relative;
+}
+.map-form-box{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+.form-box{
+    position: relative;
+}
+.det-form{
+    position: absolute;
+    width: 480px;
+    height: 430px;
+    padding: 32px;
+    top: 110px;
+    right: 110px;
+    background-color: #FFFFFF;
+}
+.det-form fieldset{
+    height: 100%;
+}
+.name-box, .email-box{
+    width: 48%;
+    height: 48px;
+    color: #817f7f;
+    background-color: #E6E6E6;
+    padding: 0 12px;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+.subject-box{
+    width: 100%;
+    height: 48px;
+    color: #817f7f;
+    background-color: #E6E6E6;
+    padding: 0 12px;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: capitalize;
+    font-size: 14px;
+    margin-top: 12px;
+}
+.message-box{
+    width: 100%;
+    height: 50%;
+    color: #817f7f;
+    background-color: #E6E6E6;
+    padding: 12px;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: capitalize;
+    font-size: 14px;
+    margin-top: 12px;
+}
+.map-send-btn{
+    width: 100%;
+    padding: 16px 0;
+    background-color: #69C6BA;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    border: 0;
+    margin-top: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* footer styles */
+.footer{
+    height: 100px;
+    color: #FFFFFF;
+    background-color: #69C6BA;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 12px;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
